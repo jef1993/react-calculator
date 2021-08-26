@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: lightsteelblue;
+}
+
+.App {
+  height: 750px;
+  width: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #55575c;
+  border-radius: 20px;
+  border: 10px outset #a19d9d;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.7);
+}
+
+.main {
+  height: 85%;
+  width: 85%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.monitor {
+  background-color: #9ba192;
+  border: 5px inset #4d4a4a;
+  height: 90%;
+  grid-area: 1/1/span 1/-1;
+}
+.monitor__content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 40px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.buttons {
+  grid-area: 2/1/-1/-1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  margin-top: 20px;
+}
+.buttons * {
+  margin: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0 3px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.buttons *:active {
+  box-shadow: 0 0 0 2px;
+  transform-origin: right bottom;
+  transform: scale(0.97);
+}
+
+.equal {
+  grid-area: 4/4/span 2/span 1;
+  background-color: #ffb62d;
+}
+
+.num-0 {
+  grid-area: 5/1/span 1/span 2;
+}
+
+/*# sourceMappingURL=style.css.map */
