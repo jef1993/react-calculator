@@ -16,9 +16,10 @@ function App() {
       setStr("");
       setOutput("");
     } else if (symbol === "=") {
-      if (!str.match(/\D\D/) && !str[0].match(/[*/]/))
+      if (!str.match(/\D\D/) && !str[0].match(/[*/]/)) {
         setStr(evaluate(str).toString());
-      setOutput(evaluate(str).toString());
+        setOutput(evaluate(str).toString());
+      }
     } else {
       setStr(str + symbol);
     }
