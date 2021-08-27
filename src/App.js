@@ -12,8 +12,9 @@ function App() {
 
     if (symbol === "C") {
       setStr(str.slice(0, -1));
-    } else if (symbol === "DC") {
+    } else if (symbol === "DEL") {
       setStr("");
+      setOutput("");
     } else if (symbol === "=") {
       if (!str.match(/\D\D/) && !str[0].match(/[*/]/))
         setStr(evaluate(str).toString());
