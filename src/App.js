@@ -9,19 +9,27 @@ function App() {
 
   const handleClick = (e) => {
     const symbol = e.target.innerHTML;
-
     if (symbol === "C") {
       setStr(str.slice(0, -1));
     } else if (symbol === "DEL") {
       setStr("");
       setOutput("");
     } else if (symbol === "=") {
-      if (!str.match(/\D\D/) && !str[0].match(/[*/]/)) {
-        setStr(evaluate(str).toString());
-        setOutput(evaluate(str).toString());
-      }
+      const evaluateFix = evaluate(
+        str[str.length - 1].match(/\D/) ? str.slice(0, -1) : str
+      ).toString();
+      setStr(evaluateFix);
+      setOutput(evaluateFix);
     } else {
-      setStr(str + symbol);
+      if (symbol.match(/\D/) && str.slice(-1).match(/\D/)) {
+        setStr(str.slice(0, -1) + symbol);
+
+        if (symbol.match(/[*/]/) && str.length === 1) {
+          setStr(str);
+        }
+      } else {
+        setStr(symbol.match(/[*/]/) && str === "" ? "" : str + symbol);
+      }
     }
   };
 
