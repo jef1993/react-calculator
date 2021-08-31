@@ -32,9 +32,9 @@ const layout = mapping.map((el) => new Buttons(el[0], el[1]));
 
 function Button(props) {
   return (
-    <div className={props.class} onClick={props.click}>
+    <button className={props.class} onClick={props.click}>
       {props.content}
-    </div>
+    </button>
   );
 }
 
