@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+import { evaluate } from "mathjs";
 
 const mapping = [
   ["cancel", "C"],
@@ -30,13 +32,13 @@ class Buttons {
 
 const layout = mapping.map((el) => new Buttons(el[0], el[1]));
 
-function Button(props) {
+const Button = function (props) {
   return (
     <button className={props.class} onClick={props.click}>
       {props.content}
     </button>
   );
-}
+};
 
 export default Button;
 
